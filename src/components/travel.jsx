@@ -7,14 +7,13 @@ function Travel(props){
   const IMG_DEFAULT = 'http://images.jdmagicbox.com/comp/def_content/travel_agents/default-travel-agents-6.jpg';
   const PRICE = props.price;
   return (
-      <div>
+      <article className="travelCard">
         <h2>{props.destiny}</h2>
         { //Esto es como un if
-          PRICE && 
-          <h3>Viaja a {props.destiny} por tan solo {PRICE}€</h3>
+          PRICE ? <p className="price">Viaja a {props.destiny} por tan solo {PRICE}€</p> : <p className="price">Precio no disponible</p>
         }
-        <img className="destiny" src={IMG ? IMG : IMG_DEFAULT} alt={props.destiny}/>
-      </div>
+        <img className="destinyImage" src={IMG ? IMG : IMG_DEFAULT} alt={props.destiny}/>
+      </article>
   );
 };
 
